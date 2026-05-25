@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" rel="stylesheet">
-  <script src="api.js"></script>
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="api.js" defer></script>
+    <title>API</title>
 </head>
-<body class="h-screen font-['DynaPuff']">
-    <header class="bg-orange-900 p-3 w-full">
-        <div class="flex justify-between items-center m-1 w-full">
-        <h1 class="text-white font-bold text-lg ml-3">API</h1>
-        <div class="flex gap-4">
-        <input type="text" class="border-2 border-black p-1 rounded-xl border-white text-white w-55" placeholder="Digite o nome ou ID da receita" 
-        class="">
-        <button class="border-2 rounded-xl p-1 border-white text-white font-bold w-20 hover:bg-white hover:text-orange-900 active:scale-110 mr-3">Buscar</button>
-        </div>
-        </div>
-    </header>
-    <main class="w-full flex justify-center flex-col items-center">
-        <div class="flex flex-col justify-center">
-        <h1 class="flex justify-center mt-32 text-3xl text-orange-900 font-bold">Confira nossa lista de receitas!</h1>
-        </div>
-        <div class="flex justify-center items-center gap-25 mt-28">
-            <div class="flex border-3 border-orange-900 rounded-xl w-100 h-100">
-            <img src="" alt="imagemcomida">
-            </div>
-            <div class="flex flex-col gap-15 font-bold">
-            <p>Nome da receita:</p>
-            <p>Ingredientes:</p>
-            <p>Instruções</p>
-            <p>Avaliação:</p>
-            <div class="flex gap-15 mt-5">
-            <button class="text-white border-2 border-orange-900 bg-orange-900 w-20 h-8 rounded-xl hover:bg-orange-950 active:scale-110">Voltar</button>
-            <button class="text-white border-2 border-orange-900 bg-orange-900 w-20 h-8 rounded-xl hover:bg-orange-950 active:scale-110">Avançar</button>
-            </div>
-            </div>
-            </div>
-    </main>
+
+<body class="min-h-screen font-['DynaPuff']">
+<header class="bg-orange-900 p-3 w-full">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-3 w-full">
+    <h1 class="text-white font-bold text-lg ml-0 sm:ml-3">API</h1>
+    <div class="flex gap-4 w-full sm:w-auto justify-center">
+    <input type="text" class="border-2 border-white p-1 rounded-xl text-white w-full sm:w-55" placeholder="Digite o nome ou ID da receita">
+    <button class="border-2 rounded-xl p-1 border-white text-white font-bold w-32 sm:w-20 hover:bg-white hover:text-orange-900 active:scale-110 mr-0 sm:mr-3">Buscar</button>
+    </div>
+    </div>
+</header>
+<main class="w-full flex flex-col justify-center items-center px-4">
+    <div class="flex flex-col justify-center">
+    <h1 class="mt-16 sm:mt-25 text-2xl sm:text-3xl text-orange-900 font-bold text-center">Confira nossa lista de receitas!</h1>
+    </div>
+    <div class="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-25 mt-12 sm:mt-20 lg:mt-15 w-full">
+    <div class="flex border-3 border-orange-900 rounded-xl w-full max-w-xs sm:w-100 h-72 sm:h-100">
+        <img id="imagemdacomida" src="" alt="imagemcomida" class="w-full h-full object-cover rounded-xl">
+    </div>
+    <div class="flex flex-col gap-15 font-bold w-full lg:w-auto text-center lg:text-left">
+    <p id="nome">Nome da receita:</p>
+    <p id="ingredientes">Ingredientes:</p>
+    <p id="instrucoes">Instruções</p>
+    <p id="avaliacao">Avaliação:</p>
+
+    <div class="flex gap-4 mt-5 justify-center lg:justify-start">
+    <button class="text-white border-2 border-orange-900 bg-orange-900 w-24 h-8 rounded-xl hover:bg-orange-950 active:scale-110">Voltar</button>
+    <button class="text-white border-2 border-orange-900 bg-orange-900 w-24 h-8 rounded-xl hover:bg-orange-950 active:scale-110">Avançar</button>
+    </div>
+    </div>
+    </div>
+</main>
 </body>
 </html>
