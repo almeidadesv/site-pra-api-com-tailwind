@@ -9,7 +9,7 @@ receitas = data.recipes;
 
   mostrarReceita();
   } catch (erro) {
-  console.log("Erro ao buscar receitas:", erro);
+  console.log("Erro ao buscar as receitas", erro);
   }
 }
 
@@ -36,10 +36,31 @@ document.getElementById("botaovoltar").onclick = function () {
 };
 
 document.getElementById("botaoavancar").onclick = function () {
-  if (index < receitas.length - 1) {
+  if (index <= 28) {
     index++;
     mostrarReceita();
   }
 };
+
+document.getElementById("botaobuscar").onclick = function () {
+  let digitado = document.querySelector("input").value.trim().toLowerCase();
+
+  let resultado = receitas.find(function (r) {
+    return String(r.id) === digitado || r.name.toLowerCase().includes(digitado);
+  });
+
+  if (resultado) {
+    index = receitas.indexOf(resultado);
+    mostrarReceita();
+  } else {
+    document.getElementById("imagemdacomida").src = "./src/imagens/receitanaoencontrada.jpeg";
+    document.getElementById("nome").innerHTML = ("")
+    document.getElementById("ingredientes").innerHTML = ("")
+    document.getElementById("instrucoes").innerHTML = ("")
+    document.getElementById("avaliacao").innerHTML = ("")
+};
+
+
+}
 
  buscarReceitas()
